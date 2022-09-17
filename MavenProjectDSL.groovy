@@ -7,9 +7,9 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-        maven('clean package', 'single-module/pom.xml')
         maven{
-            mavenInstallation('Maven 3.8.6')
+            goals('clean package')
+            providedSettings('Maven 3.8.6')
         }
     }
     publishers {
