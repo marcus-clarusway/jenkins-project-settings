@@ -7,10 +7,7 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-        maven{
-            goals('clean package')
-            providedSettings('Maven 3.8.6')
-        }
+        maven('clean package', 'single-module/pom.xml', 'Maven 3.8.6')
     }
     publishers {
         //archive the war file generated
